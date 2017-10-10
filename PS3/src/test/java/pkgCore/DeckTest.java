@@ -19,9 +19,11 @@ public class DeckTest {
 		Card NewCard = NewDeck.DrawSuit(eSuit.DIAMONDS);
 
 		assertTrue(NewCard.geteSuit() == eSuit.DIAMONDS);
-		assertTrue(NewCard.geteSuit() != eSuit.DIAMONDS);
+		assertTrue(NewCard.geteSuit() != eSuit.CLUBS);
 		assertFalse(NewCard.geteSuit() == eSuit.CLUBS);
-		assertNull(NewDeck);
+
+		assertTrue(NewCard.geteSuit() == null);
+		assertNull(NewDeck.DrawSuit(eSuit.DIAMONDS));
 	}
 	
 	@Test
@@ -30,6 +32,9 @@ public class DeckTest {
 		Card NewCard = NewDeck.DrawRank(eRank.FOUR);
 		assertTrue(NewCard.geteRank() == eRank.FOUR);
 		assertFalse(NewCard.geteRank() == eRank.FIVE);
+		
+		assertTrue(NewCard.geteRank() == null);
+		assertNull(NewDeck.DrawRank(eRank.FOUR));
 	}
 	
 	@Test
@@ -46,20 +51,11 @@ public class DeckTest {
 	
 	@Test
 	public void TestCardCount() {
-		int c = 5;
-		int cards = 5;
-		
-		assertTrue(CountCard(c) == 1);
 		Deck NewDeck = new Deck();
-		
-		
-		
-		
 		Card NewSuit = NewDeck.DrawSuit(eSuit.DIAMONDS);
 		Card NewRank = NewDeck.DrawRank(eRank.FIVE);
 		assertTrue(NewSuit.geteSuit() == eSuit.DIAMONDS);
 		assertTrue(NewRank.geteRank() == eRank.FIVE);
-
 	}
 
 }

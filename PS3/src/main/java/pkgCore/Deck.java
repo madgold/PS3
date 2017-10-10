@@ -64,7 +64,7 @@ public class Deck
 		return iCardNumber;	
 	}
 
-	public int CountCount(Card c) {
+	public int Count(Card c) {
 		for (Card cards: cardsInDeck) {
 			if (cards == c)
 				return 1; 
